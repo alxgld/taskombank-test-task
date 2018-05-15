@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  admin-service:
+          restart: always
+          depends_on:
+            - client-service
+          build: admin-service
+          ports:
+            - 8080:8080
+
+  client-service:
+        restart: always
+        build: client-service
+        ports:
+          - 8081:8081
